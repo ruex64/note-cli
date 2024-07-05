@@ -7,7 +7,7 @@ import { listnotes } from "./utils.js";
 yargs(hideBin(process.argv))
   .command(
     "new <note>",
-    "Create a new note",
+    "Create",
     (yargs) => {
       return yargs.positional("note", {
         type: "string",
@@ -30,7 +30,7 @@ yargs(hideBin(process.argv))
   })
   .command(
     "all",
-    "to show all notes",
+    "show all",
     () => {},
    async (argv) => {
     const notes  = await getAllnotes();
@@ -53,7 +53,7 @@ yargs(hideBin(process.argv))
   )
   .command(
     "remove <id>",
-    "remove a note by id",
+    "remove by id",
     (yargs) => {
       return yargs.positional("id", {
         type: "number",
@@ -72,7 +72,7 @@ yargs(hideBin(process.argv))
   )
   .command(
     "web  [port]",
-    "launch website to see notes",
+    "launch website on port 5000",
     (yargs) => {
       return yargs.positional("port", {
         type: "number",
@@ -86,7 +86,7 @@ yargs(hideBin(process.argv))
   )
   .command(
     "clean",
-    "remove all notes",
+    "remove all ",
     () => {},
     async (argv) => {
     await removeAllnotes();
